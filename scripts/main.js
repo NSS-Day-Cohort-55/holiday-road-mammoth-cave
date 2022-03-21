@@ -3,6 +3,7 @@ import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { makeEateryList } from "./eateries/EateryList.js";
 import { loadEatery } from "./eateries/EateryDataManager.js";
+import { getParks, showParks, showStates } from "./parks/ParkDataManager.js"
 
 const showEateryList = () => {
     loadEatery()
@@ -19,6 +20,8 @@ showEateryList()
 const applicationElement = document.querySelector(".Holiday-Road");
 
 ShowHome()
+showStates()
+
 
 applicationElement.addEventListener("click", event => {
 	if (event.target.id === "Plan_Trip"){
