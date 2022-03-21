@@ -1,3 +1,5 @@
+import { AttractionHtml } from "../attractions/AttractionDataManager.js"
+
 const GeneratePlanner = () => {
   return `
   <section class="Planner_Section">
@@ -5,7 +7,7 @@ const GeneratePlanner = () => {
       <h1>Plan an Itenerary...or else.</h1>
       <section class="Planner_Selectors">
         <div class="Planner_Selectors_Park">Parks</div>
-        <div class="Planner_Selectors_Bazar">Bazar</div>
+        <div class="Planner_Selectors_Bazar"></div>
         <div class="Planner_Selectors_Eatery">Eateries</div>
       </section>
       <section class="Planner_Itenerary">

@@ -11,7 +11,7 @@ export const fetchAttraction = () => {
 }
 
 export const AttractionHtml = () => {
-    const renderAttraction = document.querySelector(".renderAttraction")
+    const renderAttraction = document.querySelector(".Planner_Selectors_Bazar")
     fetchAttraction()
     .then( (attractionApi) => {
         

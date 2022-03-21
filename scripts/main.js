@@ -4,7 +4,6 @@ import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 
 
-AttractionHtml()
 
 
 const applicationElement = document.querySelector(".Holiday-Road");
@@ -15,6 +14,7 @@ applicationElement.addEventListener("click", event => {
 	if (event.target.id === "Plan_Trip"){
     ClearHome()
     ShowPlanner()
+    AttractionHtml()
     window.scrollTo({
         top: 250,
         left: 0,
