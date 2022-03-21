@@ -1,7 +1,9 @@
 export const eatery = (eateryObject) => {
     return `
     <div>
-              <option value="${eateryObject.businessName}"> ${eateryObject.businessName}</option>           
+    
+              <option value="${eateryObject.businessName}"> ${eateryObject.businessName}</option>  
+              
           </div>
           `;
   }
@@ -21,3 +23,4 @@ export const eatery = (eateryObject) => {
     </div>
     `;
   }
+

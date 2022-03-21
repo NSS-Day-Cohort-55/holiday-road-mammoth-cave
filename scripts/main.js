@@ -1,12 +1,19 @@
-import { useStoredEateries, fetchEateries  } from "./eateries/EateryDataManager.js";
-import { makeEateryList } from "./eateries/EateryList.js";
-
-makeEateryList()
-useStoredEateries()
-fetchEateries()
 import { ShowHome, ClearHome  } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
+import { makeEateryList } from "./eateries/EateryList.js";
+import { loadEatery } from "./eateries/EateryDataManager.js";
+
+const showEateryList = () => {
+    loadEatery()
+    .then(eateryArray =>{
+        console.log("Eatery Array", eateryArray)
+
+        makeEateryList(eateryArray)
+    })
+}
+
+showEateryList()
 
 
 const applicationElement = document.querySelector(".Holiday-Road");

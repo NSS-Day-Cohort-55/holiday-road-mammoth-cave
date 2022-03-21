@@ -5,7 +5,7 @@ export const makeEateryList = (eateryArray) =>{
 };
 
 const eateryList = (allEateries) =>{
-  const eateryElement = document.querySelector(".allEateries");
+  const eateryElement = document.querySelector("#allEateries");
     let HTMLArray = allEateries.map(oneEatery => {
         return eatery(oneEatery);
     })
