@@ -1,3 +1,11 @@
+ import { showStates } from "../parks/ParkDataManager.js"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  const GenerateHome = () => {
   return `
   <section class ="HomeSection">

@@ -2,12 +2,14 @@ import { ShowHome, ClearHome  } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
-
+import { getParks, showParks, showStates } from "./parks/ParkDataManager.js"
 
 const applicationElement = document.querySelector(".Holiday-Road");
 
 ShowHome()
 showWeather(36.16784, -86.77816)
+showStates()
+
 
 applicationElement.addEventListener("click", event => {
 	if (event.target.id === "Plan_Trip"){

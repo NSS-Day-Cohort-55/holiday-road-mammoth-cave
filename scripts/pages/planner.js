@@ -1,3 +1,4 @@
+import { showParks } from "../parks/ParkDataManager.js"
 const GeneratePlanner = () => {
   return `
   <section class="Planner_Section">
