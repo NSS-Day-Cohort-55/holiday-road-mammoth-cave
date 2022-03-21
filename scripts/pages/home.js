@@ -13,8 +13,6 @@
       <img src="./images/Logo.png" alt="">
       <h1>You'll never travel without mammoth again...or else</h1>
       <section id="HomePage_Input">
-        <input type="text">
-        <button id="Plan_Trip">Plan a Trip</button>
       </section>
       <section class="Weather"></section>
     </div>

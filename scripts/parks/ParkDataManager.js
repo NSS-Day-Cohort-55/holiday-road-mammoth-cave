@@ -34,6 +34,7 @@ export const showStates = () => {
         .then( (statesApi) => {
             renderStates.innerHTML += ` <select>
              ${statesApi.states.map((dataObj)=>`<option> ${dataObj.name}</option>`)    }
-             </select>`
+             </select>
+             <button id="Plan_Trip">Plan a Trip</button>`
             })
         }
