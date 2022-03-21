@@ -2,6 +2,7 @@ const GenerateItenerary = () => {
   return `
   <section class="ItenerariesSection">
   <div class="ItenerariesPage">
+    <img src="./images/Logo.png" alt="">
     <h1>Saved Iteneraries</h1>
     <div class="ItenerariesSaved">
       <section class="IteneraryCard">

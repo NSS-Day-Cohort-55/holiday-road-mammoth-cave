@@ -55,7 +55,7 @@
   margin-bottom: 1em;
 }
 
-.HomePage input {
+.HomePage select {
   padding: .5em;
   width: 25em;
   background-color: White;
@@ -68,4 +68,10 @@
   box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
 -webkit-box-shadow: 0px -1px 9px 7px rgba(0,0,0,0.69);
 -moz-box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
+}
+
+img {
+  width: 10em;
+  border: black 2px solid;
+  border-radius: 100px;
 }

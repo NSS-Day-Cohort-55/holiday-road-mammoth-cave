@@ -5,6 +5,7 @@ const GeneratePlanner = () => {
   return `
   <section class="Planner_Section">
     <div class="Planner_Page">
+      <img src="./images/Logo.png" alt="">
       <h1>Plan an Itenerary...or else.</h1>
       <section class="Planner_Selectors">
         <div class="Planner_Selectors_Park">Parks</div>
