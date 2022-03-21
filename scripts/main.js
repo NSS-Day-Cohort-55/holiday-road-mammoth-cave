@@ -29,7 +29,8 @@ applicationElement.addEventListener("click", event => {
 	if (event.target.id === "Plan_Trip"){
     ClearHome()
     ShowPlanner()
-    showWeather(36.16784, -86.77816)
+    showParks()
+    loadEatery()
     window.scrollTo({
         top: 250,
         left: 0,
@@ -54,6 +55,8 @@ applicationElement.addEventListener("click", event => {
 	if (event.target.id === "Iteneraries_New"){
     ClearItenerary()
     ShowPlanner()
+    showParks()
+    loadEatery()
     window.scrollTo({
         top: 250,
         left: 0,
@@ -66,6 +69,7 @@ applicationElement.addEventListener("click", event => {
 	if (event.target.id === "Iteneraries_Reset"){
     ClearItenerary()
     ShowHome()
+    showStates()
     window.scrollTo({
         top: 250,
         left: 0,
@@ -78,6 +82,7 @@ applicationElement.addEventListener("click", event => {
 	if (event.target.id === "Planner_State"){
     ClearPlanner()
     ShowHome()
+    showStates()
     window.scrollTo({
         top: 250,
         left: 0,

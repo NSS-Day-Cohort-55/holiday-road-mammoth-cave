@@ -75,7 +75,7 @@
   padding: .5em;
 }
 
-.Planner_Selectors div {
+.Planner_Selectors select {
   text-align: center;
   padding: .5em;
   background-color: White;
@@ -83,8 +83,9 @@
   font-weight: bolder;
   border: black 2px solid;
   margin: 0em 3.4em 5em;
-  width: 9em;
+  width: 30em;
   font-size: 20px;
+  border-radius: 100px;
   box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
   -webkit-box-shadow: 0px -1px 9px 7px rgba(0,0,0,0.69);
   -moz-box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
