@@ -1,2 +1,3 @@
-import { getParks } from "./parks/ParkDataManager.js"
+import { getParks, showParks, } from "./parks/ParkDataManager.js"
 
+showParks();
