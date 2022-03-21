@@ -1,0 +1,7 @@
+@import "home.css";
+@import "iteneraries.css";
+@import "planner.css";
+
+body {
+  margin: 0;
+}
