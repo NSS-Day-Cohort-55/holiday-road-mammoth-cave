@@ -1,16 +1,19 @@
 import { ShowHome, ClearHome  } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
+import { showWeather } from "./weather/WeatherDataManager.js";
 
 
 const applicationElement = document.querySelector(".Holiday-Road");
 
 ShowHome()
+showWeather(36.16784, -86.77816)
 
 applicationElement.addEventListener("click", event => {
 	if (event.target.id === "Plan_Trip"){
     ClearHome()
     ShowPlanner()
+    showWeather(36.16784, -86.77816)
     window.scrollTo({
         top: 250,
         left: 0,
