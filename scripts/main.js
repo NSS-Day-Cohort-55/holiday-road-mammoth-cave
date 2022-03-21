@@ -1,3 +1,4 @@
+import { AttractionHtml } from "./attractions/AttractionDataManager.js";
 import { ShowHome, ClearHome  } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
@@ -18,6 +19,8 @@ const showEateryList = () => {
 showEateryList()
 
 
+
+
 const applicationElement = document.querySelector(".Holiday-Road");
 
 ShowHome()
@@ -31,6 +34,7 @@ applicationElement.addEventListener("click", event => {
     ShowPlanner()
     showParks()
     loadEatery()
+    AttractionHtml()
     window.scrollTo({
         top: 250,
         left: 0,
@@ -57,6 +61,7 @@ applicationElement.addEventListener("click", event => {
     ShowPlanner()
     showParks()
     loadEatery()
+    AttractionHtml()
     window.scrollTo({
         top: 250,
         left: 0,
