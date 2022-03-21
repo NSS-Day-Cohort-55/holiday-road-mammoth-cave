@@ -1,0 +1,86 @@
+.ItenerariesSection {
+  display: flex;
+  background-image: url(../images/Gradient-Green.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30em;
+}
+
+.ItenerariesPage {
+  display: flex;
+  align-items: center;
+    flex-direction: column;
+  margin: auto;
+  margin-top: 20em;
+  border: black 1px solid;
+  background-color: rgb(39, 21, 21);
+  padding: 3em 20em 10em;
+  box-shadow: 1px 1px 88px 29px rgba(0,0,0,0.76);
+-webkit-box-shadow: 1px 1px 88px 29px rgba(0,0,0,0.76);
+-moz-box-shadow: 1px 1px 88px 29px rgba(0,0,0,0.76);
+}
+
+.ItenerariesPage button {
+  padding: .5em;
+  background-color: White;
+  color: black;
+  font-weight: bolder;
+  border: black 2px solid;
+  border-radius: 100px;
+  width: 5em;
+  font-size: 20px;
+  margin: 5em 2em 0em;
+  box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
+  -webkit-box-shadow: 0px -1px 9px 7px rgba(0,0,0,0.69);
+  -moz-box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
+}
+
+
+.ItenerariesPage h1 {
+  font-size: 50px;
+  width: 10em;
+  color: white;
+  margin-bottom: 2em;
+}
+
+.IteneraryCard {
+  text-align: center;
+  padding: 10em 2em;
+  background-color: White;
+  color: black;
+  font-weight: bolder;
+  border: black 5px solid;
+  margin: 0em 2em 1em;
+  width: 9em;
+  font-size: 20px;
+  box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
+}
+
+.ItenerariesPage div :hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
+}
+
+.ItenerariesPage section :hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.ItenerariesPage button:hover {
+  transform: scale(0.97) ;
+  background-color: green;
+  box-shadow: 0px 0px 6px 4px rgba(0,0,0,0.69);
+}
+
+.ItenerariesSaved {
+  display: flex;
+}
+
+
+
+
+
+
+
+
