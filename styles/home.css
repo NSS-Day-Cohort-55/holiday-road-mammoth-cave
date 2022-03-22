@@ -66,8 +66,7 @@
   border-radius: 100px;
   font-size: 20px;
   box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
--webkit-box-shadow: 0px -1px 9px 7px rgba(0,0,0,0.69);
--moz-box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
+  
 }
 
 img {

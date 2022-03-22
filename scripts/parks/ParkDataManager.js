@@ -23,6 +23,7 @@ export const showParks = () => {
         getParks()
         .then( (parksApi) => {
             renderParks.innerHTML = ` <select>
+            <option>Select a Park</option>
              ${parksApi.data.map((dataObj)=>`<option> ${dataObj.fullName}</option>`)    }
              </select>`
             })
@@ -33,6 +34,7 @@ export const showStates = () => {
         getStates()
         .then( (statesApi) => {
             renderStates.innerHTML += ` <select>
+            <option>Select a State</option>
              ${statesApi.states.map((dataObj)=>`<option> ${dataObj.name}</option>`)    }
              </select>
              <button id="Plan_Trip">Plan a Trip</button>`

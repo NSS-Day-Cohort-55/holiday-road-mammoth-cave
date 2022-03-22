@@ -15,7 +15,8 @@ export const AttractionHtml = () => {
     fetchAttraction()
     .then( (attractionApi) => {
         
-     renderAttraction.innerHTML  = ` <h1>Bizarre</h1> <select >
+     renderAttraction.innerHTML  = `<select>
+        <option>Select an Attraction</option>
         ${attractionApi.map((attraction) => `<option>${attraction.name}</option>`)   }
         </select>
         `
