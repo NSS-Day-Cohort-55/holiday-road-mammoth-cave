@@ -19,7 +19,7 @@ export const AttractionHtml = () => {
         ${attractionApi.map((attraction) => `<option>${attraction.name}</option>`)   }
         </select>
         `
-        console.log(attractionApi)
+     
        
     })
 }
