@@ -23,9 +23,18 @@ export const showParks = (stateCode) => {
         getParks(stateCode)
         .then( (parksApi) => {
             renderParks.innerHTML = ` <select class="parkSelector">
+<<<<<<< HEAD
             <option>Select a Park</option>
              ${parksApi.data.map((dataObj)=>`<option value= ${dataObj.fullName}> ${dataObj.fullName}</option>`)    }
              </select>`
+=======
+             ${parksApi.data.map((dataObj)=>
+                `<option value="parkID"> ${dataObj.fullName}</option>`)}
+                </select>
+                
+                `
+             
+>>>>>>> main
             })
         }
 
@@ -34,9 +43,13 @@ export const showStates = () => {
         getStates()
         .then( (statesApi) => {
             renderStates.innerHTML += ` <select value=${statesApi.states[0].abbreviation} class="stateSelector">
+<<<<<<< HEAD
             <option>Select a State</option>
              ${statesApi.states.map((dataObj)=>`
              <option value= ${dataObj.abbreviation}> ${dataObj.name}</option>`)    }
+=======
+             ${statesApi.states.map((dataObj)=>`<option value="${dataObj.abbreviation}"> ${dataObj.name}</option>`)    }
+>>>>>>> main
              </select>
              <button id="Plan_Trip">Plan a Trip</button>`
             })
