@@ -1,12 +1,18 @@
 
- 
+let eateryApi = [];
 
-let eateryApi = "http://holidayroad.nss.team/eateries"
+export const useEateries = () => {
+  return [...eateryApi]
+}
 
 export const loadEatery = () => {
     return fetch("http://holidayroad.nss.team/eateries")
     .then(response => response.json())
-   
+    .then((eateryArray) => {
+      eateryApi  = eateryArray
+      return eateryArray
+  })
+
 }
 
 export const eateryHtml = () => {
@@ -14,9 +20,8 @@ export const eateryHtml = () => {
     loadEatery()
     .then( (eateryApi) => {
         
-     renderEatery.innerHTML  = `<select >
-        <option>Select an Eatery</option>
-        ${eateryApi.map((eatery) => `<option>${eatery.businessName}</option>`)   }
+     renderEatery.innerHTML  = ` <h1>Eatery</h1> <select class="eaterySelectBox">
+        ${eateryApi.map((eatery) => `<option value=${eatery.id}>${eatery.businessName}</option>`)   }
         </select>
         `
         

@@ -20,6 +20,8 @@ export const AttractionHtml = () => {
         ${attractionApi.map((attraction) => `<option value=${attraction.id}>${attraction.name}</option>`)   }
         </select>
         `
+    })
+}
 
 export const AttractionDetail = (attractionValue ) => {
     const renderDetails = document.querySelector(".Planner_Details_Bazar")

@@ -20,7 +20,7 @@ const GeneratePlanner = (park) => {
       <section class="Planner_Details">
         <section class="Planner_Details_Park">Park Details</section>
         <section class="Planner_Details_Bazar">Bazar Details</section>
-        <section class="Planner_Details_Eatery">Eatery Details</section>
+        <section class="Planner_Details_Eatery"></section>
       </section>
       <section class="Weather_Page"></section>
       <section class="Planner_Buttons">
