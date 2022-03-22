@@ -23,16 +23,20 @@ showEateryList()
 
 const applicationElement = document.querySelector(".Holiday-Road");
 
+
 ShowHome()
 showWeather(36.16784, -86.77816)
 showStates()
 
 
+
+
 applicationElement.addEventListener("click", event => {
+    const selectedState = document.querySelector(".stateSelector").value;
 	if (event.target.id === "Plan_Trip"){
     ClearHome()
-    ShowPlanner()
-    showParks()
+    ShowPlanner(selectedState)
+    showParks(selectedState)
     loadEatery()
     AttractionHtml()
     window.scrollTo({

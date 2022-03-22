@@ -7,8 +7,8 @@ import { settings } from '../Settings.js'
 let parksApi=`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}`
 let statesApi="https://gist.github.com/DakotaLambert/112f2a451ab34f18be1de2c8be8655ff"
 
-export const getParks = () => {
-    return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}`)
+export const getParks = (stateCode) => {
+    return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}stateCode=${stateCode}`)
     .then(response => response.json())
 }
 
@@ -18,9 +18,9 @@ export const getStates = () => {
 }
 
 // //names of all the parks going to html in dropdown
-export const showParks = () => {
+export const showParks = (stateCode) => {
     const renderParks= document.querySelector(".Planner_Selectors_Park")
-        getParks()
+        getParks(stateCode)
         .then( (parksApi) => {
             renderParks.innerHTML = ` <select>
              ${parksApi.data.map((dataObj)=>`<option> ${dataObj.fullName}</option>`)    }
@@ -32,9 +32,10 @@ export const showStates = () => {
     const renderStates= document.querySelector("#HomePage_Input")
         getStates()
         .then( (statesApi) => {
-            renderStates.innerHTML += ` <select>
-             ${statesApi.states.map((dataObj)=>`<option> ${dataObj.name}</option>`)    }
+            renderStates.innerHTML += ` <select value=${statesApi.states[0].abbreviation} class="stateSelector">
+             ${statesApi.states.map((dataObj)=>`<option value= ${dataObj.abbreviation}> ${dataObj.name}</option>`)    }
              </select>
              <button id="Plan_Trip">Plan a Trip</button>`
             })
         }
+
