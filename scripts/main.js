@@ -3,8 +3,13 @@ import { ShowHome, ClearHome } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
-import { loadEatery, eateryHtml } from "./eateries/EateryDataManager.js";
-import { getParks, showParks, showStates } from "./parks/ParkDataManager.js";
+import { loadEatery, eateryHtml, useEateries } from "./eateries/EateryDataManager.js";
+import { getParks, showParks, showStates } from "./parks/ParkDataManager.js"
+import {eateryDetail} from "./eateries/Eatery.js"
+
+
+
+
 
 
 const applicationElement = document.querySelector(".Holiday-Road");
@@ -22,7 +27,25 @@ applicationElement.addEventListener("click", (event)=> {
     }
 })
 
-applicationElement.addEventListener("click", (event) => {
+
+// Listen for a click on the eatery detail button
+applicationElement.addEventListener("click", event => {
+  console.log(event)
+  if (event.target.className.startsWith("eaterySelectBox")) {
+    const boxSelector = document.querySelector(".eaterySelectBox").value
+      // Find the eatery onject based on the selected value
+      const singleEateryObject = useEateries().find(oneEateryObject => {
+          if (parseInt(boxSelector) === oneEateryObject.id) {
+               console.log(oneEateryObject)
+               eateryDetail(oneEateryObject)
+          } 
+         })
+        }})
+
+
+
+
+applicationElement.addEventListener("click", event => {
     const selectedState = document.querySelector(".stateSelector").value;
     if (event.target.id === "Plan_Trip") {
         ClearHome();

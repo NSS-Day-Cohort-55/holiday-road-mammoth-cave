@@ -18,12 +18,12 @@ const GeneratePlanner = (park) => {
       <section class="Planner_Itenerary">
         <section class="Planner_Itenerary_Park">${park}</section>
         <section class="Planner_Itenerary_Bazar">Selected Bazar</section>
-        <section class="Planner_Itenerary_Eatery">Selected Eatery</section>
+        <section class="Planner_Itenerary_Eatery">Selected Eat</section>
       </section>
       <section class="Planner_Details">
         <section class="Planner_Details_Park">Park Details</section>
         <section class="Planner_Details_Bazar">Bazar Details</section>
-        <section class="Planner_Details_Eatery">Eatery Details</section>
+        <section class="Planner_Details_Eatery"></section>
       </section>
       <section class="Planner_Buttons">
         <button id="Planner_State">State Selection</button>
