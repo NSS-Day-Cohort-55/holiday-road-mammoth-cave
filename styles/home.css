@@ -49,10 +49,10 @@
 }
 
 .HomePage h2 {
-  font-size: 30px;
-  width: 7em;
-  color: white;
-  margin-bottom: 1em;
+  font-size: 40px;
+  width: 10em;
+  color: white;;
+  text-align: center;
 }
 
 .HomePage select {

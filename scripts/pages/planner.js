@@ -6,16 +6,17 @@ import { showParks, getParks } from "../parks/ParkDataManager.js"
 const GeneratePlanner = (state) => {
   return `
   <section class="Planner_Section">
-    <div class="Planner_Page">
+  
+  <div class="Planner_Page">
       <img src="./images/Logo.png" alt="">
-      <h1>Plan an Itenerary...or else.</h1>
+      <h1>Let's plan your trip to ${state}!</h1>
       <section class="Planner_Selectors">
         <div class="Planner_Selectors_Park">Parks</div>
         <div class="Planner_Selectors_Bazar"></div>
         <div class="Planner_Selectors_Eatery">Eateries</div>
       </section>
       <section class="Planner_Itenerary">
-        <section class="Planner_Itenerary_Park">${state}</section>
+        <section class="Planner_Itenerary_Park">Selected Park</section>
         <section class="Planner_Itenerary_Bazar">Selected Bazar</section>
         <section class="Planner_Itenerary_Eatery">Selected Eatery</section>
       </section>
@@ -24,6 +25,7 @@ const GeneratePlanner = (state) => {
         <section class="Planner_Details_Bazar">Bazar Details</section>
         <section class="Planner_Details_Eatery">Eatery Details</section>
       </section>
+      <section class="Weather_Page"></section>
       <section class="Planner_Buttons">
         <button id="Planner_State">State Selection</button>
         <button>Save Itenerary</button>
