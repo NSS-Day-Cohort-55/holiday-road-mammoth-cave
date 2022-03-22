@@ -4,6 +4,7 @@ import { showParks, getParks } from "../parks/ParkDataManager.js"
 
 
 const GeneratePlanner = (park) => {
+  
   return `
   <section class="Planner_Section">
     <div class="Planner_Page">
@@ -44,12 +45,12 @@ const RemovePlanner = () => {
 
 
 
-
-export const ShowPlanner = (state,park) => {
-	//Get a reference to the location on the DOM where the list will display
+export const ShowPlanner = (park) => {
+  //Get a reference to the location on the DOM where the list will display
 	const postElement = document.querySelector(".Planner");
-		postElement.innerHTML = GeneratePlanner(state,park);
-	}
+  postElement.innerHTML = GeneratePlanner(park);
+}
+
 
 export const ClearPlanner = () => {
     //Get a reference to the location on the DOM where the list will display
