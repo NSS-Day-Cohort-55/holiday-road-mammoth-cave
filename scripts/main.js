@@ -123,46 +123,9 @@ applicationElement.addEventListener("click", (event) => {
     ShowHome();
     showStates();
     window.scrollTo({
-<<<<<<< HEAD
-        top: 250,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-})
-
-applicationElement.addEventListener("click", event => {
-  event.preventDefault()
-  if (event.target.id === "newPost__submit") {
-    //collect the input values into an object to post to the DB
-    const title = document.querySelector("input[name='postTitle']").value
-    const url = document.querySelector("input[name='postURL']").value
-    const description = document.querySelector("textarea[name='postDescription']").value
-    //we have not created a user yet - for now, we will hard code `1`.
-    //we can add the current time as well
-    const postObject = {
-      title: title,
-      imageURL: url,
-      description: description,
-      userId: 1,
-      timestamp: Date.now()
-    }
-
-  }
-})
-
-
-const parkSelector = applicationElement(".parkSelector")
-const detailsPark = applicationElement(".Planner_Details_Park")
-
-detailsPark.innerHtml = parkSelector.value;
-
-
-=======
       top: 250,
       left: 0,
       behavior: "smooth",
     });
   }
 });
->>>>>>> main

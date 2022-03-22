@@ -23,18 +23,12 @@ export const showParks = (stateCode) => {
         getParks(stateCode)
         .then( (parksApi) => {
             renderParks.innerHTML = ` <select class="parkSelector">
-<<<<<<< HEAD
-            <option>Select a Park</option>
-             ${parksApi.data.map((dataObj)=>`<option value= ${dataObj.fullName}> ${dataObj.fullName}</option>`)    }
-             </select>`
-=======
              ${parksApi.data.map((dataObj)=>
                 `<option value="parkID"> ${dataObj.fullName}</option>`)}
                 </select>
                 
                 `
              
->>>>>>> main
             })
         }
 
