@@ -14,7 +14,7 @@
       <h1>You'll never travel without mammoth again...or else</h1>
       <section id="HomePage_Input">
       </section>
-      <section class="Weather"></section>
+      <section id="Error"></section>
     </div>
     </section>
   `
@@ -37,3 +37,9 @@ export const ClearHome = () => {
 	const postElement = document.querySelector(".Home");
 		postElement.innerHTML = RemoveHome();
 	}
+
+  export const ShowError = () => {
+    //Get a reference to the location on the DOM where the list will display
+    const postElement = document.querySelector("#Error");
+      postElement.innerHTML = `<h2>Pick a State<h2>`
+    }

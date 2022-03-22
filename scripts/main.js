@@ -1,5 +1,5 @@
 import { AttractionHtml } from "./attractions/AttractionDataManager.js";
-import { ShowHome, ClearHome } from "./pages/home.js";
+import { ShowHome, ClearHome, ShowError  } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
