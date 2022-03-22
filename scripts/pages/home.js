@@ -41,5 +41,5 @@ export const ClearHome = () => {
   export const ShowError = () => {
     //Get a reference to the location on the DOM where the list will display
     const postElement = document.querySelector("#Error");
-      postElement.innerHTML = `<h2>Pick a State, you doof!</h2>`
+      postElement.innerHTML = `<h2>Pick a State<h2>`
     }

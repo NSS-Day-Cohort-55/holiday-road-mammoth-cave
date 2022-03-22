@@ -33,7 +33,8 @@ export const eateryHtml = () => {
     loadEatery()
     .then( (eateryApi) => {
         
-     renderEatery.innerHTML  = ` <h1>Eatery</h1> <select >
+     renderEatery.innerHTML  = `<select >
+        <option>Select an Eatery</option>
         ${eateryApi.map((eatery) => `<option>${eatery.businessName}</option>`)   }
         </select>
         `

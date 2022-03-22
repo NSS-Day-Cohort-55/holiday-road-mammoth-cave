@@ -1,6 +1,7 @@
+import { showParks } from "../parks/ParkDataManager.js"
+import { eateryHtml } from "../eateries/EateryDataManager.js"
 import { AttractionHtml } from "../attractions/AttractionDataManager.js"
-import { showParks, getParks } from "../parks/ParkDataManager.js"
-
+import { showWeather } from "../weather/WeatherDataManager.js"
 
 
 const GeneratePlanner = (park) => {
@@ -14,11 +15,6 @@ const GeneratePlanner = (park) => {
         <div class="Planner_Selectors_Park">Parks</div>
         <div class="Planner_Selectors_Bazar"></div>
         <div class="Planner_Selectors_Eatery">Eateries</div>
-      </section>
-      <section class="Planner_Itenerary">
-        <section class="Planner_Itenerary_Park">${park}</section>
-        <section class="Planner_Itenerary_Bazar">Selected Bazar</section>
-        <section class="Planner_Itenerary_Eatery">Selected Eatery</section>
       </section>
       <section class="Planner_Details">
         <section class="Planner_Details_Park">Park Details</section>
@@ -59,4 +55,16 @@ export const ClearPlanner = () => {
       postElement.innerHTML = RemovePlanner();
     }
 
+export const createPlannerPage = () => {
+  ShowPlanner(selectedState)
+  showParks(selectedState)
+  eateryHtml()
+  AttractionHtml()
+ showWeather(36.16784, -86.77816)
+window.scrollTo({
+  top: 250,
+  left: 0,
+  behavior: 'smooth'
+});
+}
 
