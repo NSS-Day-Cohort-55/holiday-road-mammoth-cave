@@ -8,7 +8,7 @@ let weatherApi = getApi()
 
 export const getWeather = (lat, lon) => {
   return fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${settings.weatherKey}`)
-    .then(response => response.json)
+    .then(response => response.json())
 }
 
 export const showWeather = (lat, lon) => {
