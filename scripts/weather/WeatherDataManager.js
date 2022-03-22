@@ -16,7 +16,7 @@ export const showWeather = (lat, lon) => {
   getWeather(lat, lon)
     .then((weatherApi) => {
       renderWeather.innerHTML = ` <section>
-      ${weatherApi.list.map((dataObj)=>`<h1> ${dataObj.main.temp}</h1>`)}
+      ${weatherApi.list?.map((dataObj)=>`<h1> ${dataObj.main.temp}</h1>`)}
       </section>`
      })
  }

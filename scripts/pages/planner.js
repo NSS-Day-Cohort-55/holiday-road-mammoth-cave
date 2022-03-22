@@ -1,7 +1,9 @@
 import { AttractionHtml } from "../attractions/AttractionDataManager.js"
-import { showParks } from "../parks/ParkDataManager.js"
+import { showParks, getParks } from "../parks/ParkDataManager.js"
 
-const GeneratePlanner = () => {
+
+
+const GeneratePlanner = (state) => {
   return `
   <section class="Planner_Section">
     <div class="Planner_Page">
@@ -13,7 +15,7 @@ const GeneratePlanner = () => {
         <div class="Planner_Selectors_Eatery">Eateries</div>
       </section>
       <section class="Planner_Itenerary">
-        <section class="Planner_Itenerary_Park">Selected Park</section>
+        <section class="Planner_Itenerary_Park">${state}</section>
         <section class="Planner_Itenerary_Bazar">Selected Bazar</section>
         <section class="Planner_Itenerary_Eatery">Selected Eatery</section>
       </section>
@@ -38,10 +40,15 @@ const RemovePlanner = () => {
   `
 }
 
-export const ShowPlanner = () => {
+
+
+
+
+
+export const ShowPlanner = (state) => {
 	//Get a reference to the location on the DOM where the list will display
 	const postElement = document.querySelector(".Planner");
-		postElement.innerHTML = GeneratePlanner();
+		postElement.innerHTML = GeneratePlanner(state);
 	}
 
 export const ClearPlanner = () => {
@@ -49,3 +56,5 @@ export const ClearPlanner = () => {
     const postElement = document.querySelector(".Planner");
       postElement.innerHTML = RemovePlanner();
     }
+
+
