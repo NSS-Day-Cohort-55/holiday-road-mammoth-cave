@@ -40,6 +40,10 @@
     box-shadow: 0px 0px 6px 4px rgba(0,0,0,0.69);
   }
 
+  .HomePage button:active {
+    background-color: darkgreen;
+  }
+
 
 .HomePage h1 {
   font-size: 50px;
@@ -49,10 +53,10 @@
 }
 
 .HomePage h2 {
-  font-size: 30px;
-  width: 7em;
-  color: white;
-  margin-bottom: 1em;
+  font-size: 40px;
+  width: 10em;
+  color: white;;
+  text-align: center;
 }
 
 .HomePage select {
@@ -66,8 +70,6 @@
   border-radius: 100px;
   font-size: 20px;
   box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
--webkit-box-shadow: 0px -1px 9px 7px rgba(0,0,0,0.69);
--moz-box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
 }
 
 img {

@@ -12,11 +12,30 @@ export const getWeather = (lat, lon) => {
 }
 
 export const showWeather = (lat, lon) => {
-  const renderWeather = document.querySelector(".Weather")
+  const renderWeather = document.querySelector(".Weather_Page")
   getWeather(lat, lon)
     .then((weatherApi) => {
-      renderWeather.innerHTML = ` <section>
-      ${weatherApi.list?.map((dataObj)=>`<h1> ${dataObj.main.temp}</h1>`)}
+      renderWeather.innerHTML = `<section class= "Weather">
+      <section class= "Weather_Card">
+        <h2>Day 1<h2>
+        <h3>Temperature: ${weatherApi.list[0].main.temp}</h3>
+      </section>
+      <section class= "Weather_Card">
+        <h2>Day 2<h2>
+        <h3>Temperature: ${weatherApi.list[1].main.temp}</h3>
+      </section>
+      <section class= "Weather_Card">
+        <h2>Day 3<h2>
+        <h3>Temperature: ${weatherApi.list[2].main.temp}</h3>
+      </section>
+      <section class= "Weather_Card">
+        <h2>Day 4<h2>
+        <h3>Temperature: ${weatherApi.list[3].main.temp}</h3>
+      </section>
+      <section class= "Weather_Card">
+        <h2>Day 5<h2>
+        <h3>Temperature: ${weatherApi.list[4].main.temp}</h3>
+      </section>
       </section>`
      })
  }
