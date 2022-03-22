@@ -24,7 +24,7 @@ export const eateryHtml = () => {
         ${eateryApi.map((eatery) => `<option value=${eatery.id}>${eatery.businessName}</option>`)   }
         </select>
         `
-        console.log(eateryApi)
+        
        
     })
 }
