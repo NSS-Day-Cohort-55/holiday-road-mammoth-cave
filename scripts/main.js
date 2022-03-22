@@ -3,18 +3,10 @@ import { ShowHome, ClearHome  } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
-import { loadEatery, eateryHtml } from "./eateries/EateryDataManager.js";
-// import { loadEatery } from "./eateries/EateryDataManager.js";
+import { loadEatery, eateryHtml, useEateries } from "./eateries/EateryDataManager.js";
 import { getParks, showParks, showStates } from "./parks/ParkDataManager.js"
+import {eateryDetail} from "./eateries/Eatery.js"
 
-// const showEateryList = () => {
-//     loadEatery()
-//     .then(eateryArray =>{
-//         console.log("Eatery Array", eateryArray)
-
-//         makeEateryList(eateryArray)
-//     })
-// }
 
 
 
@@ -26,6 +18,20 @@ const applicationElement = document.querySelector(".Holiday-Road");
 ShowHome()
 showWeather(36.16784, -86.77816)
 showStates()
+
+
+// Listen for a click on the eatery detail button
+applicationElement.addEventListener("click", event => {
+  console.log(event)
+  if (event.target.className.startsWith("eaterySelectBox")) {
+    const boxSelector = document.querySelector(".eaterySelectBox").value
+      // Find the eatery onject based on the selected value
+      const singleEateryObject = useEateries().find(oneEateryObject => {
+          if (parseInt(boxSelector) === oneEateryObject.id) {
+               console.log(oneEateryObject)
+               eateryDetail(oneEateryObject)
+          } 
+      })
 
 
 

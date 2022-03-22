@@ -1,31 +1,18 @@
-// let apiEateries = [];
 
-// export const useEateries = () => {
-//   return [...apiEateries]
-// }
+let eateryApi = [];
 
-// export const loadEatery = () => {
-
-//     return fetch("http://holidayroad.nss.team/eateries")
-//     .then(response => response.json())
-//     .then((eateryArray) => {
-//         apiEateries = eateryArray
-//         return eateryArray
-//     })
-// };
-
- 
-
-let eateryApi = "http://holidayroad.nss.team/eateries"
+export const useEateries = () => {
+  return [...eateryApi]
+}
 
 export const loadEatery = () => {
     return fetch("http://holidayroad.nss.team/eateries")
     .then(response => response.json())
-    // staged data to be used on line 16
-    // .then(parsedResponse => {
-    //     // do something with response here
-    //     return console.log(parsedResponse)
-    // })
+    .then((eateryArray) => {
+      eateryApi  = eateryArray
+      return eateryArray
+  })
+
 }
 
 export const eateryHtml = () => {
@@ -33,8 +20,8 @@ export const eateryHtml = () => {
     loadEatery()
     .then( (eateryApi) => {
         
-     renderEatery.innerHTML  = ` <h1>Eatery</h1> <select >
-        ${eateryApi.map((eatery) => `<option>${eatery.businessName}</option>`)   }
+     renderEatery.innerHTML  = ` <h1>Eatery</h1> <select class="eaterySelectBox">
+        ${eateryApi.map((eatery) => `<option value=${eatery.id}>${eatery.businessName}</option>`)   }
         </select>
         `
         console.log(eateryApi)
