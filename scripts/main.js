@@ -3,20 +3,19 @@ import { ShowHome, ClearHome, ShowError  } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
-import { makeEateryList } from "./eateries/EateryList.js";
-import { loadEatery } from "./eateries/EateryDataManager.js";
+import { loadEatery, eateryHtml } from "./eateries/EateryDataManager.js";
+// import { loadEatery } from "./eateries/EateryDataManager.js";
 import { getParks, showParks, showStates } from "./parks/ParkDataManager.js"
 
-const showEateryList = () => {
-    loadEatery()
-    .then(eateryArray =>{
-        console.log("Eatery Array", eateryArray)
+// const showEateryList = () => {
+//     loadEatery()
+//     .then(eateryArray =>{
+//         console.log("Eatery Array", eateryArray)
 
-        makeEateryList(eateryArray)
-    })
-}
+//         makeEateryList(eateryArray)
+//     })
+// }
 
-showEateryList()
 
 
 
@@ -26,9 +25,6 @@ const applicationElement = document.querySelector(".Holiday-Road");
 
 ShowHome()
 showStates()
-
-
-
 
 applicationElement.addEventListener("click", event => {
     const selectedState = document.querySelector(".stateSelector").value;
@@ -40,6 +36,12 @@ applicationElement.addEventListener("click", event => {
     ShowPlanner(selectedState)
     showParks(selectedState)
     loadEatery()
+    // const selectedPark = document.querySelector(".parkSelector").value;
+	if (event.target.id === "Plan_Trip"){
+        ClearHome()
+        ShowPlanner(selectedState)
+        showParks(selectedState)
+        eateryHtml()
     AttractionHtml()
     showWeather(36.16784, -86.77816)
     window.scrollTo({
@@ -48,6 +50,7 @@ applicationElement.addEventListener("click", event => {
         behavior: 'smooth'
       });
     }
+  }
 })
 
 applicationElement.addEventListener("click", event => {
@@ -67,7 +70,7 @@ applicationElement.addEventListener("click", event => {
     ClearItenerary()
     ShowPlanner()
     showParks()
-    loadEatery()
+    eateryHtml()
     AttractionHtml()
     showWeather(36.16784, -86.77816)
     window.scrollTo({
@@ -103,4 +106,3 @@ applicationElement.addEventListener("click", event => {
       });
     }
 })
-

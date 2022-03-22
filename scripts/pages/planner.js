@@ -3,20 +3,20 @@ import { showParks, getParks } from "../parks/ParkDataManager.js"
 
 
 
-const GeneratePlanner = (state) => {
+const GeneratePlanner = (park) => {
   return `
   <section class="Planner_Section">
   
   <div class="Planner_Page">
       <img src="./images/Logo.png" alt="">
-      <h1>Let's plan your trip to ${state}!</h1>
+      <h1>Let's plan your trip to ${park}!</h1>
       <section class="Planner_Selectors">
         <div class="Planner_Selectors_Park">Parks</div>
         <div class="Planner_Selectors_Bazar"></div>
         <div class="Planner_Selectors_Eatery">Eateries</div>
       </section>
       <section class="Planner_Itenerary">
-        <section class="Planner_Itenerary_Park">Selected Park</section>
+        <section class="Planner_Itenerary_Park">${park}</section>
         <section class="Planner_Itenerary_Bazar">Selected Bazar</section>
         <section class="Planner_Itenerary_Eatery">Selected Eatery</section>
       </section>
@@ -47,10 +47,10 @@ const RemovePlanner = () => {
 
 
 
-export const ShowPlanner = (state) => {
+export const ShowPlanner = (state,park) => {
 	//Get a reference to the location on the DOM where the list will display
 	const postElement = document.querySelector(".Planner");
-		postElement.innerHTML = GeneratePlanner(state);
+		postElement.innerHTML = GeneratePlanner(state,park);
 	}
 
 export const ClearPlanner = () => {
