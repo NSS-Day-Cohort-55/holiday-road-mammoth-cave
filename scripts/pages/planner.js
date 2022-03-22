@@ -17,7 +17,7 @@ const GeneratePlanner = (state) => {
       <section class="Planner_Itenerary">
         <section class="Planner_Itenerary_Park">${state}</section>
         <section class="Planner_Itenerary_Bazar">Selected Bazar</section>
-        <section class="Planner_Itenerary_Eatery">Selected Eatery</section>
+        <section class="Planner_Itenerary_Eatery"> <select name="foodplace" id="allEateries"></select></section>
       </section>
       <section class="Planner_Details">
         <section class="Planner_Details_Park">Park Details</section>

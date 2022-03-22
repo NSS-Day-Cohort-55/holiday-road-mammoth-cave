@@ -37,7 +37,7 @@ applicationElement.addEventListener("click", event => {
     ClearHome()
     ShowPlanner(selectedState)
     showParks(selectedState)
-    loadEatery()
+    showEateryList()
     AttractionHtml()
     window.scrollTo({
         top: 250,
@@ -64,7 +64,7 @@ applicationElement.addEventListener("click", event => {
     ClearItenerary()
     ShowPlanner()
     showParks()
-    loadEatery()
+    showEateryList()
     AttractionHtml()
     window.scrollTo({
         top: 250,
