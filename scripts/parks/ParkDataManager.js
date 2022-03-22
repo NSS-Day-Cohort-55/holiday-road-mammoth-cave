@@ -22,8 +22,8 @@ export const showParks = (stateCode) => {
     const renderParks= document.querySelector(".Planner_Selectors_Park")
         getParks(stateCode)
         .then( (parksApi) => {
-            renderParks.innerHTML = ` <select>
-             ${parksApi.data.map((dataObj)=>`<option> ${dataObj.fullName}</option>`)    }
+            renderParks.innerHTML = ` <select class="parkSelector">
+             ${parksApi.data.map((dataObj)=>`<option value= ${dataObj.fullName}> ${dataObj.fullName}</option>`)    }
              </select>`
             })
         }
