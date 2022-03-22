@@ -8,7 +8,7 @@ let parksApi=`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}`
 let statesApi="https://gist.github.com/DakotaLambert/112f2a451ab34f18be1de2c8be8655ff"
 
 export const getParks = (stateCode) => {
-    return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}stateCode=${stateCode}`)
+    return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&stateCode=${stateCode}`)
     .then(response => response.json())
 }
 
@@ -22,8 +22,8 @@ export const showParks = (stateCode) => {
     const renderParks= document.querySelector(".Planner_Selectors_Park")
         getParks(stateCode)
         .then( (parksApi) => {
-            renderParks.innerHTML = ` <select>
-             ${parksApi.data.map((dataObj)=>`<option> ${dataObj.fullName}</option>`)    }
+            renderParks.innerHTML = ` <select class="parkSelector">
+             ${parksApi.data.map((dataObj)=>`<option value= ${dataObj.fullName}> ${dataObj.fullName}</option>`)    }
              </select>`
             })
         }

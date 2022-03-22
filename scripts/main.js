@@ -3,20 +3,19 @@ import { ShowHome, ClearHome  } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
-import { makeEateryList } from "./eateries/EateryList.js";
-import { loadEatery } from "./eateries/EateryDataManager.js";
+import { loadEatery, eateryHtml } from "./eateries/EateryDataManager.js";
+// import { loadEatery } from "./eateries/EateryDataManager.js";
 import { getParks, showParks, showStates } from "./parks/ParkDataManager.js"
 
-const showEateryList = () => {
-    loadEatery()
-    .then(eateryArray =>{
-        console.log("Eatery Array", eateryArray)
+// const showEateryList = () => {
+//     loadEatery()
+//     .then(eateryArray =>{
+//         console.log("Eatery Array", eateryArray)
 
-        makeEateryList(eateryArray)
-    })
-}
+//         makeEateryList(eateryArray)
+//     })
+// }
 
-showEateryList()
 
 
 
@@ -33,11 +32,13 @@ showStates()
 
 applicationElement.addEventListener("click", event => {
     const selectedState = document.querySelector(".stateSelector").value;
+    // const selectedPark = document.querySelector(".parkSelector").value;
 	if (event.target.id === "Plan_Trip"){
-    ClearHome()
-    ShowPlanner(selectedState)
-    showParks(selectedState)
-    loadEatery()
+        ClearHome()
+        ShowPlanner(selectedState)
+        showParks(selectedState)
+       
+        eateryHtml()
     AttractionHtml()
     window.scrollTo({
         top: 250,
@@ -64,7 +65,7 @@ applicationElement.addEventListener("click", event => {
     ClearItenerary()
     ShowPlanner()
     showParks()
-    loadEatery()
+    eateryHtml()
     AttractionHtml()
     window.scrollTo({
         top: 250,
