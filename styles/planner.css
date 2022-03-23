@@ -24,7 +24,7 @@
 
 
 .Planner_Buttons {
-  margin-top: 5em;
+  margin-top: 4em;
 }
 
 .Planner_Page button {
@@ -67,7 +67,7 @@
 .Planner_Selectors {
   display: flex;
   flex-direction: row;
-  margin: 3em;
+  margin: 3em 3em .5em;
   padding: .5em;
 }
 
@@ -84,7 +84,7 @@
   color: black;
   font-weight: bolder;
   border: black 2px solid;
-  margin: 0em 0em 5em;
+  margin: 0em 0em 2em;
   width: 26em;
   height: 3em;
   font-size: 14px;
@@ -111,19 +111,19 @@
 .Planner_Details {
   display: flex;
   flex-direction: row;
-  margin: 3em;
+  margin: 1em 3em 3em;
   padding: .5em;
 }
 
 .Planner_Details section {
   text-align: center;
-  padding: 10em 2em;
+  padding: 2em 2em;
   background-color: White;
   color: black;
   font-weight: bolder;
   border: black 2px solid;
-  margin: 0em 2em 1em;
-  width: 9em;
+  margin: 0em .5em 1em;
+  width: 15em;
   font-size: 20px;
   box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
   -webkit-box-shadow: 0px -1px 9px 7px rgba(0,0,0,0.69);

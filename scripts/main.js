@@ -19,7 +19,14 @@ ShowHome();
 showWeather(36.16784, -86.77816);
 showStates();
 
-
+applicationElement.addEventListener("click", (event)=> {
+    const selectedPark = document.querySelector(".parkSelector").value;
+     if (event.target.className === "parkSelector"){
+       let getParkID= document.getElementsByClassName("parkID")
+        console.log(getParkID)
+        return getParkID
+    }
+})
 
 
 // Listen for a click on the eatery detail button
@@ -49,6 +56,7 @@ applicationElement.addEventListener("click", event => {
         
         eateryHtml();
         AttractionHtml();
+        showWeather(36.16784, -86.77816);
         window.scrollTo({
             top: 250,
             left: 0,
