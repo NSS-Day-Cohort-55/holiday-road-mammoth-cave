@@ -39,11 +39,13 @@ export const AttractionDetail = (attractionValue ) => {
                <div>
                Restrooms: ${bObj.ameneties.restrooms}
                </div>
-                `
-           }
-        }) 
-    })
-}
+                `;
+      }
+    });
+  });
+};
+
+const mainContainer = document.querySelector(".Holiday-Road");
 
 mainContainer.addEventListener("change", (changeEvent) => {
   if (changeEvent.target.id === "selectedAttraction") {
@@ -55,4 +57,11 @@ mainContainer.addEventListener("change", (changeEvent) => {
 });
 
 
+
+const changeTemperature = () => {
+  for (tempObj of allTempatures) {
+    (tempObj * 9/5) + 32
+    return dataObj.main.temp
+  }
+}
 
