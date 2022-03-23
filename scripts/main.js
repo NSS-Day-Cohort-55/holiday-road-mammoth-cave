@@ -20,7 +20,7 @@ showStates();
 
 applicationElement.addEventListener("click", (event)=> {
     const selectedPark = document.querySelector(".parkSelector").value;
-    if (event.target.className === "parkSelector"){
+     if (event.target.className === "parkSelector"){
        let getParkID= document.getElementsByClassName("parkID")
         console.log(getParkID)
         return getParkID
@@ -47,13 +47,13 @@ applicationElement.addEventListener("click", event => {
 
 applicationElement.addEventListener("click", event => {
     const selectedState = document.querySelector(".stateSelector").value;
-    if (event.target.id === "Plan_Trip") {
+     if (event.target.id === "Plan_Trip") {
         ClearHome();
         ShowPlanner(selectedState);
         showParks(selectedState);
-        
         eateryHtml();
         AttractionHtml();
+        showWeather(36.16784, -86.77816);
         window.scrollTo({
             top: 250,
             left: 0,
