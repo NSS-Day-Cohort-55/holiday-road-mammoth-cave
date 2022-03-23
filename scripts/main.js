@@ -30,10 +30,7 @@ applicationElement.addEventListener("click", (event)=> {
 
 // Listen for a click on the eatery detail button
 applicationElement.addEventListener("click", event => {
-<<<<<<< HEAD
-=======
   // console.log(event)
->>>>>>> main
   if (event.target.className.startsWith("eaterySelectBox")) {
     const boxSelector = document.querySelector(".eaterySelectBox").value.split("--")
       // Find the eatery onject based on the selected value
@@ -49,25 +46,14 @@ applicationElement.addEventListener("click", event => {
 
 
 applicationElement.addEventListener("click", event => {
-<<<<<<< HEAD
-  if (event.target.id === "Plan_Trip" && document.querySelector(".stateSelector").value == "Select a State") {
-    document.querySelector()
-  }
-  
-  else if (event.target.id === "Plan_Trip") {
-       const selectedState = document.querySelector(".stateSelector").value.split("--", 20)
-        ClearHome();
-        ShowPlanner(selectedState[1]);
-        showParks(selectedState[0]);
-=======
   
   if (event.target.id === "Plan_Trip") {
       const selectedState = document.querySelector(".stateSelector").value.split("--");
         ClearHome();
         ShowPlanner(selectedState[1]);
         showParks(selectedState[0]);
+        console.log (selectedState)
         
->>>>>>> main
         eateryHtml();
         AttractionHtml();
         showWeather(36.16784, -86.77816);
