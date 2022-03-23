@@ -18,8 +18,8 @@ ShowHome();
 showStates();
 
 applicationElement.addEventListener("click", (event)=> {
-    const selectedPark = document.querySelector(".parkSelector").value;
-     if (event.target.className === "parkSelector"){
+  if (event.target.className === "parkSelector"){
+       const selectedPark = document.querySelector(".parkSelector").value;
        let getParkID= document.getElementsByClassName("parkID")
         console.log(getParkID)
         return getParkID
@@ -29,12 +29,11 @@ applicationElement.addEventListener("click", (event)=> {
 
 // Listen for a click on the eatery detail button
 applicationElement.addEventListener("click", event => {
-  console.log(event)
   if (event.target.className.startsWith("eaterySelectBox")) {
-    const boxSelector = document.querySelector(".eaterySelectBox").value
+    const boxSelector = document.querySelector(".eaterySelectBox").value.split("--")
       // Find the eatery onject based on the selected value
-      const singleEateryObject = useEateries().find(oneEateryObject => {
-          if (parseInt(boxSelector) === oneEateryObject.id) {
+      useEateries().find(oneEateryObject => {
+          if (parseInt(boxSelector[0]) === oneEateryObject.id) {
                console.log(oneEateryObject)
                eateryDetail(oneEateryObject)
           } 
@@ -45,11 +44,15 @@ applicationElement.addEventListener("click", event => {
 
 
 applicationElement.addEventListener("click", event => {
-    const selectedState = document.querySelector(".stateSelector").value;
-     if (event.target.id === "Plan_Trip") {
+  if (event.target.id === "Plan_Trip" && document.querySelector(".stateSelector").value == "Select a State") {
+    document.querySelector()
+  }
+  
+  else if (event.target.id === "Plan_Trip") {
+       const selectedState = document.querySelector(".stateSelector").value.split("--", 20)
         ClearHome();
-        ShowPlanner(selectedState);
-        showParks(selectedState);
+        ShowPlanner(selectedState[1]);
+        showParks(selectedState[0]);
         eateryHtml();
         AttractionHtml();
         showWeather(36.16784, -86.77816);
@@ -115,3 +118,38 @@ applicationElement.addEventListener("click", (event) => {
     });
   }
 });
+
+export const createTrip = postObj => {
+  return fetch("http://localhost:8088/trips", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postObj)
+  })
+      .then(response => response.json())
+}
+
+
+applicationElement.addEventListener("click", event => {
+  event.preventDefault()
+  if (event.target.id === "Save_Plan") {
+    //collect the input values into an object to post to the DB
+    const park = document.querySelector("select[name='park_Selector']").value
+    const attraction = document.querySelector("#selectedAttraction").value
+    const eatery = document.querySelector(".eaterySelectBox").value.split("--")
+    //we have not created a user yet - for now, we will hard code `1`.
+    //we can add the current time as well
+    console.log(event)
+    console.log(eatery)
+    const tripObject = {
+      park: park,
+      attraction: attraction,
+      eatery: eatery[1],
+      userId: 1,
+      timestamp: Date.now()
+    }
+      
+    console.log(tripObject)  
+  }
+})

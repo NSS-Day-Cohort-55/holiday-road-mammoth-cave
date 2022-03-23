@@ -22,7 +22,7 @@ export const showParks = (stateCode) => {
     const renderParks= document.querySelector(".Planner_Selectors_Park")
         getParks(stateCode)
         .then( (parksApi) => {
-            renderParks.innerHTML = ` <select class="parkSelector">
+            renderParks.innerHTML = ` <select class="parkSelector" name="park_Selector">
              ${parksApi.data.map((dataObj)=>
                 `<option value="parkID"> ${dataObj.fullName}</option>`)}
                 </select>
@@ -39,7 +39,7 @@ export const showStates = () => {
             renderStates.innerHTML += ` <select value=${statesApi.states[0].abbreviation} class="stateSelector">
             <option selected disabled hidden >Select a State</option>
              ${statesApi.states.map((dataObj)=>`
-             <option value= ${dataObj.abbreviation}> ${dataObj.name}</option>`)    }
+             <option value= "${dataObj.abbreviation}--${dataObj.name}">${dataObj.name}</option>`)}
              </select>
              <button id="Plan_Trip">Plan a Trip</button>`
             })
