@@ -6,6 +6,7 @@ import { showWeather } from "./weather/WeatherDataManager.js";
 import { loadEatery, eateryHtml, useEateries } from "./eateries/EateryDataManager.js";
 import { getParks, showParks, showStates } from "./parks/ParkDataManager.js"
 import {eateryDetail} from "./eateries/Eatery.js"
+import { parkDetail } from "./parks/ParkDataManager.js";
 
 
 
@@ -29,6 +30,10 @@ applicationElement.addEventListener("click", (event)=> {
 
 // Listen for a click on the eatery detail button
 applicationElement.addEventListener("click", event => {
+<<<<<<< HEAD
+=======
+  // console.log(event)
+>>>>>>> main
   if (event.target.className.startsWith("eaterySelectBox")) {
     const boxSelector = document.querySelector(".eaterySelectBox").value.split("--")
       // Find the eatery onject based on the selected value
@@ -44,6 +49,7 @@ applicationElement.addEventListener("click", event => {
 
 
 applicationElement.addEventListener("click", event => {
+<<<<<<< HEAD
   if (event.target.id === "Plan_Trip" && document.querySelector(".stateSelector").value == "Select a State") {
     document.querySelector()
   }
@@ -53,6 +59,15 @@ applicationElement.addEventListener("click", event => {
         ClearHome();
         ShowPlanner(selectedState[1]);
         showParks(selectedState[0]);
+=======
+  
+  if (event.target.id === "Plan_Trip") {
+      const selectedState = document.querySelector(".stateSelector").value.split("--");
+        ClearHome();
+        ShowPlanner(selectedState[1]);
+        showParks(selectedState[0]);
+        
+>>>>>>> main
         eateryHtml();
         AttractionHtml();
         showWeather(36.16784, -86.77816);
@@ -63,7 +78,6 @@ applicationElement.addEventListener("click", event => {
         });
     }
 });
-
 
 
 applicationElement.addEventListener("click", (event) => {
