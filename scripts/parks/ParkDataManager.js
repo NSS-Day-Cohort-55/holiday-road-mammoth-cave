@@ -9,16 +9,13 @@ let parksApi = `https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey
 let statesApi = "https://gist.github.com/DakotaLambert/112f2a451ab34f18be1de2c8be8655ff"
 
 export const getParks = (stateCode, parkID) => {
-    if (stateCode != null) {
-        return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&stateCode=${stateCode}`)
-            .then(response => response.json())
-    } else {
-        if (parkID != null) {
-            return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&id=${parkID}`)
-                .then(response => response.json())
-        }
+    if(stateCode != null){
+    return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&stateCode=${stateCode}`)
+    .then(response => response.json())}
+        if(parkID != null){
+            return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&stateCode=${stateCode}&id=${parkID}`)
+            .then(response => response.json())}
     }
-}
 
 
 export const getStates = () => {
@@ -32,8 +29,9 @@ export const showParks = (stateCode) => {
     getParks(stateCode)
         .then((parksApi) => {
             renderParks.innerHTML = ` <select class="parkSelector">
-             ${parksApi.data.map((dataObj) =>
-                `<option value = ${dataObj.id}> ${dataObj.fullName}</option>`)}
+            <option selected disabled hidden>Select a Park</option>
+             ${parksApi.data.map((dataObj)=>
+                `<option value = "${dataObj.id}--${dataObj.fullName}"> ${dataObj.fullName}</option>`)}
 
                 </select> `
         })
@@ -46,8 +44,8 @@ export const showStates = () => {
         .then((statesApi) => {
             renderStates.innerHTML += ` <select value=${statesApi.states[0].abbreviation} class="stateSelector">
             <option>Select a State</option>
-             ${statesApi.states.map((dataObj) => `
-             <option value= "${dataObj.abbreviation}--${dataObj.name}"> ${dataObj.name}</option>`)}
+             ${statesApi.states.map((dataObj)=>`
+             <option value= "${dataObj.abbreviation}--${dataObj.name}--${dataObj.id}"> ${dataObj.name}</option>`)    }
              </select>
              <button id="Plan_Trip">Plan a Trip</button>`
         })
@@ -57,24 +55,23 @@ const mainContainer = document.querySelector(".Holiday-Road")
 
 mainContainer.addEventListener("change", changeEvent => {
     if (changeEvent.target.className === "parkSelector") {
-        // Get what the user typed into the form fields
-        const parkD = document.querySelector(".parkSelector").value
-        let selectedState = document.querySelector(".parkSelector").value
-        // .value.split("--");
-        console.log(selectedState)
-        getParks(selectedState)
-            .then((parksApi) => {
-                parksApi.data.find(singlePark => {
-                    if (singlePark.id === parkD) {
-                        // console.log(singlePark)
-                        parkDetail(singlePark)
-                    }
-                })
-
-
-            })
-    }
-})
+         // Get what the user typed into the form fields
+         const parkD = document.querySelector(".parkSelector").value.split("--")
+         let selectedState = document.querySelector(".parkSelector").value
+                // .value.split("--");
+         console.log(selectedState)
+         getParks(selectedState)
+         .then( (parksApi) => {
+             parksApi.data.find( singlePark=> {
+                  if(singlePark.id === parkD[0]){
+                       // console.log(singlePark)
+                       parkDetail(singlePark)
+                  }     
+             })
+      
+              
+})}})
+        
 
 
 
