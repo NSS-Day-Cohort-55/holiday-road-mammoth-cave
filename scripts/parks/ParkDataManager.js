@@ -29,14 +29,14 @@ export const showParks = (stateCode) => {
     getParks(stateCode)
         .then((parksApi) => {
             renderParks.innerHTML = ` <select class="parkSelector">
+            <option selected disabled hidden>Select a Park</option>
              ${parksApi.data.map((dataObj)=>
-                `<option value = ${dataObj.id}> ${dataObj.fullName}</option>`)}
-                </select>
-                
-                `
+                `<option value = "${dataObj.id}--${dataObj.fullName}"> ${dataObj.fullName}</option>`)}
 
-        })
-}
+                </select> `
+            })
+        }
+
 
 export const showStates = () => {
     const renderStates = document.querySelector("#HomePage_Input")
@@ -51,29 +51,26 @@ export const showStates = () => {
         })
 }
 
+const mainContainer = document.querySelector(".Holiday-Road")
 
-        const mainContainer = document.querySelector(".Holiday-Road")
-
-        mainContainer.addEventListener("change", changeEvent => {
-            if (changeEvent.target.className === "parkSelector") {
-                // Get what the user typed into the form fields
-                const parkD = document.querySelector(".parkSelector").value
-                let selectedState = document.querySelector(".parkSelector").value
+mainContainer.addEventListener("change", changeEvent => {
+    if (changeEvent.target.className === "parkSelector") {
+         // Get what the user typed into the form fields
+         const parkD = document.querySelector(".parkSelector").value.split("--")
+         let selectedState = document.querySelector(".parkSelector").value
                 // .value.split("--");
-                console.log(selectedState)
-                getParks(selectedState)
-                .then( (parksApi) => {
-                    parksApi.data.find( singlePark=> {
-                        if(singlePark.id === parkD){
-                            // console.log(singlePark)
-                            parkDetail(singlePark)
-                        }
-                       
-                        
-                    })
+         console.log(selectedState)
+         getParks(selectedState)
+         .then( (parksApi) => {
+             parksApi.data.find( singlePark=> {
+                  if(singlePark.id === parkD[0]){
+                       // console.log(singlePark)
+                       parkDetail(singlePark)
+                  }     
+             })
       
               
-        })}})
+})}})
         
 
 

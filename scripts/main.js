@@ -52,7 +52,6 @@ applicationElement.addEventListener("click", event => {
         ClearHome();
         ShowPlanner(selectedState[1]);
         showParks(selectedState[0]);
-        console.log (selectedState)
         
         eateryHtml();
         AttractionHtml();
@@ -70,21 +69,6 @@ applicationElement.addEventListener("click", (event) => {
   if (event.target.id === "Planner_Iteneraries") {
     ClearPlanner();
     ShowItenerary();
-    window.scrollTo({
-      top: 250,
-      left: 0,
-      behavior: "smooth",
-    });
-  }
-});
-
-applicationElement.addEventListener("click", (event) => {
-  if (event.target.id === "Iteneraries_New") {
-    ClearItenerary();
-    ShowPlanner();
-    showParks();
-    eateryHtml();
-    AttractionHtml();
     window.scrollTo({
       top: 250,
       left: 0,
@@ -130,26 +114,25 @@ export const createTrip = postObj => {
       .then(response => response.json())
 }
 
-
 applicationElement.addEventListener("click", event => {
   event.preventDefault()
   if (event.target.id === "Save_Plan") {
     //collect the input values into an object to post to the DB
-    const park = document.querySelector(".Planner_Selectors_Park").value
-    const attraction = document.querySelector("#selectedAttraction").value
+    const park = document.querySelector(".parkSelector").value.split("--")
+    const attraction = document.querySelector("#selectedAttraction").value.split("--")
     const eatery = document.querySelector(".eaterySelectBox").value.split("--")
     //we have not created a user yet - for now, we will hard code `1`.
     //we can add the current time as well
-    console.log(event)
-    console.log(eatery)
+
     const tripObject = {
-      park: park,
-      attraction: attraction,
+      park: park[1],
+      attraction: attraction[1],
       eatery: eatery[1],
       userId: 1,
       timestamp: Date.now()
     }
-      
-    console.log(tripObject)  
+    
+    createTrip(tripObject)
+    console.log(tripObject)
   }
 })
