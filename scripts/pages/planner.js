@@ -25,7 +25,7 @@ const GeneratePlanner = (park) => {
       <section class="Weather_Page"></section>
       <section class="Planner_Buttons">
         <button id="Planner_State">State Selection</button>
-        <button>Save Itenerary</button>
+        <button id="Save_Plan">Save Itenerary</button>
         <button id="Planner_Iteneraries">Itenerary List</button>
       </section>
     </div>
