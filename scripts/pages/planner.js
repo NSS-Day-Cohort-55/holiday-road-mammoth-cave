@@ -18,9 +18,9 @@ const GeneratePlanner = (park) => {
         <div class="Planner_Selectors_Eatery">Eateries</div>
       </section>
       <section class="Planner_Details">
-        <section class="Planner_Details_Park">Park Details</section>
-        <section class="Planner_Details_Bazar">Bazar Details</section>
-        <section class="Planner_Details_Eatery"></section>
+        <section class="Planner_Details_Park">Select a Park for Details</section>
+        <section class="Planner_Details_Bazar">Select an Attraction for Details</section>
+        <section class="Planner_Details_Eatery">Select an Eatery for Details</section>
       </section>
       <section class="Weather_Page"></section>
       <section class="Planner_Buttons">

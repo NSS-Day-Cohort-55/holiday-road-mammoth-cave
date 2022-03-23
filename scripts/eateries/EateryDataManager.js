@@ -20,11 +20,10 @@ export const eateryHtml = () => {
     loadEatery()
     .then( (eateryApi) => {
         
-     renderEatery.innerHTML  = ` <h1>Eatery</h1> <select class="eaterySelectBox">
+     renderEatery.innerHTML  = `<select class="eaterySelectBox">
+        <option selected disabled hidden >Select an Eatery</option>
         ${eateryApi.map((eatery) => `<option value=${eatery.id}>${eatery.businessName}</option>`)   }
         </select>
         `
-        
-       
     })
 }

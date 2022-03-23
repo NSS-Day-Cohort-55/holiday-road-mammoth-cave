@@ -52,9 +52,9 @@ applicationElement.addEventListener("click", event => {
     ClearHome();
     ShowPlanner(selectedState);
     showParks(selectedState);
-    showWeather(36.16784, -86.77816);
     eateryHtml();
     AttractionHtml();
+    showWeather(36.16784, -86.77816);
     window.scrollTo({
       top: 250,
       left: 0,
