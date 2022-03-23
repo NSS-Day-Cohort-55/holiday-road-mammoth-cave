@@ -12,17 +12,19 @@ export const fetchAttraction = () => {
 };
 
 export const AttractionHtml = () => {
-  const renderAttraction = document.querySelector(".Planner_Selectors_Bazar");
-  fetchAttraction().then((attractionApi) => {
-    renderAttraction.innerHTML = ` <h1>Bizarre</h1> <select id="selectedAttraction" >
+    const renderAttraction = document.querySelector(".Planner_Selectors_Bazar")
+    fetchAttraction()
+    .then( 
+      (attractionApi) => {
+     renderAttraction.innerHTML  = `<select id="selectedAttraction" >
         <option selected disabled hidden >Select an Attraction</option>
         ${attractionApi.map(
-          (attraction) =>
-            `<option value=${attraction.id}>${attraction.name}</option>`
-        )}
-        </select>    `;
-  });
-};
+          (attraction) => 
+          `<option value=${attraction.id}>${attraction.name}</option>`)   }
+        </select>
+        `
+    })
+}
 
 export const AttractionDetail = (attractionValue) => {
   const renderDetails = document.querySelector(".Planner_Details_Bazar");
