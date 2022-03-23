@@ -5,7 +5,8 @@ import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
 import { loadEatery, eateryHtml, useEateries } from "./eateries/EateryDataManager.js";
 import { getParks, showParks, showStates } from "./parks/ParkDataManager.js"
-import { eateryDetail } from "./eateries/Eatery.js"
+import {eateryDetail} from "./eateries/Eatery.js"
+import { parkDetail } from "./parks/ParkDataManager.js";
 
 
 
@@ -30,7 +31,7 @@ applicationElement.addEventListener("click", (event) => {
 
 // Listen for a click on the eatery detail button
 applicationElement.addEventListener("click", event => {
-  console.log(event)
+  // console.log(event)
   if (event.target.className.startsWith("eaterySelectBox")) {
     const boxSelector = document.querySelector(".eaterySelectBox").value
     // Find the eatery onject based on the selected value
@@ -47,6 +48,7 @@ applicationElement.addEventListener("click", event => {
 
 
 applicationElement.addEventListener("click", event => {
+<<<<<<< HEAD
   const selectedState = document.querySelector(".stateSelector").value;
   if (event.target.id === "Plan_Trip") {
     ClearHome();
@@ -61,8 +63,25 @@ applicationElement.addEventListener("click", event => {
       behavior: "smooth",
     });
   }
+=======
+  
+  if (event.target.id === "Plan_Trip") {
+      const selectedState = document.querySelector(".stateSelector").value.split("--");
+        ClearHome();
+        ShowPlanner(selectedState[1]);
+        showParks(selectedState[0]);
+        
+        eateryHtml();
+        AttractionHtml();
+        showWeather(36.16784, -86.77816);
+        window.scrollTo({
+            top: 250,
+            left: 0,
+            behavior: "smooth",
+        });
+    }
+>>>>>>> 106764aecd84e107bce544c9aa3642a13590aa5c
 });
-
 
 
 applicationElement.addEventListener("click", (event) => {
