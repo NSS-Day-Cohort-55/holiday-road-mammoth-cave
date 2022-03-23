@@ -1,5 +1,5 @@
 import { AttractionHtml } from "./attractions/AttractionDataManager.js";
-import { ShowHome, ClearHome, ShowError  } from "./pages/home.js";
+import { ShowHome, ClearHome, ShowError } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
@@ -16,16 +16,16 @@ import { parkDetail } from "./parks/ParkDataManager.js";
 const applicationElement = document.querySelector(".Holiday-Road");
 
 ShowHome();
-showWeather(36.16784, -86.77816);
+
 showStates();
 
-applicationElement.addEventListener("click", (event)=> {
-    const selectedPark = document.querySelector(".parkSelector").value;
-     if (event.target.className === "parkSelector"){
-       let getParkID= document.getElementsByClassName("parkID")
-        console.log(getParkID)
-        return getParkID
-    }
+applicationElement.addEventListener("click", (event) => {
+  const selectedPark = document.querySelector(".parkSelector").value;
+  if (event.target.className === "parkSelector") {
+    let getParkID = document.getElementsByClassName("parkID")
+    console.log(getParkID)
+    return getParkID
+  }
 })
 
 
@@ -34,14 +34,15 @@ applicationElement.addEventListener("click", event => {
   // console.log(event)
   if (event.target.className.startsWith("eaterySelectBox")) {
     const boxSelector = document.querySelector(".eaterySelectBox").value
-      // Find the eatery onject based on the selected value
-      const singleEateryObject = useEateries().find(oneEateryObject => {
-          if (parseInt(boxSelector) === oneEateryObject.id) {
-               console.log(oneEateryObject)
-               eateryDetail(oneEateryObject)
-          } 
-         })
-        }})
+    // Find the eatery onject based on the selected value
+    const singleEateryObject = useEateries().find(oneEateryObject => {
+      if (parseInt(boxSelector) === oneEateryObject.id) {
+        console.log(oneEateryObject)
+        eateryDetail(oneEateryObject)
+      }
+    })
+  }
+})
 
 
 
