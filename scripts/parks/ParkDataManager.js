@@ -9,13 +9,16 @@ let parksApi = `https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey
 let statesApi = "https://gist.github.com/DakotaLambert/112f2a451ab34f18be1de2c8be8655ff"
 
 export const getParks = (stateCode, parkID) => {
-    if(stateCode != null){
-    return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&stateCode=${stateCode}`)
-    .then(response => response.json())}else{
-        if(parkID != null){
+    if (stateCode != null) {
+        return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&stateCode=${stateCode}`)
+            .then(response => response.json())
+    } else {
+        if (parkID != null) {
             return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&id=${parkID}`)
-            .then(response => response.json())}
-    }}
+                .then(response => response.json())
+        }
+    }
+}
 
 
 export const getStates = () => {
@@ -29,12 +32,12 @@ export const showParks = (stateCode) => {
     getParks(stateCode)
         .then((parksApi) => {
             renderParks.innerHTML = ` <select class="parkSelector">
-             ${parksApi.data.map((dataObj)=>
+             ${parksApi.data.map((dataObj) =>
                 `<option value = ${dataObj.id}> ${dataObj.fullName}</option>`)}
 
                 </select> `
-            })
-        }
+        })
+}
 
 
 export const showStates = () => {
@@ -43,8 +46,8 @@ export const showStates = () => {
         .then((statesApi) => {
             renderStates.innerHTML += ` <select value=${statesApi.states[0].abbreviation} class="stateSelector">
             <option>Select a State</option>
-             ${statesApi.states.map((dataObj)=>`
-             <option value= "${dataObj.abbreviation}--${dataObj.name}"> ${dataObj.name}</option>`)    }
+             ${statesApi.states.map((dataObj) => `
+             <option value= "${dataObj.abbreviation}--${dataObj.name}"> ${dataObj.name}</option>`)}
              </select>
              <button id="Plan_Trip">Plan a Trip</button>`
         })
@@ -54,30 +57,32 @@ const mainContainer = document.querySelector(".Holiday-Road")
 
 mainContainer.addEventListener("change", changeEvent => {
     if (changeEvent.target.className === "parkSelector") {
-         // Get what the user typed into the form fields
-         const parkD = document.querySelector(".parkSelector").value
-         let selectedState = document.querySelector(".parkSelector").value
-                // .value.split("--");
-         console.log(selectedState)
-         getParks(selectedState)
-         .then( (parksApi) => {
-             parksApi.data.find( singlePark=> {
-                  if(singlePark.id === parkD){
-                       // console.log(singlePark)
-                       parkDetail(singlePark)
-                  }     
-             })
-      
-              
-})}})
-        
+        // Get what the user typed into the form fields
+        const parkD = document.querySelector(".parkSelector").value
+        let selectedState = document.querySelector(".parkSelector").value
+        // .value.split("--");
+        console.log(selectedState)
+        getParks(selectedState)
+            .then((parksApi) => {
+                parksApi.data.find(singlePark => {
+                    if (singlePark.id === parkD) {
+                        // console.log(singlePark)
+                        parkDetail(singlePark)
+                    }
+                })
+
+
+            })
+    }
+})
 
 
 
-        export const parkDetail = (parkObject) => {
-            console.log(parkObject)
-            const parkDetailHtml = document.querySelector(".Planner_Details_Park")
+
+export const parkDetail = (parkObject) => {
+    console.log(parkObject)
+    const parkDetailHtml = document.querySelector(".Planner_Details_Park")
     parkDetailHtml.innerHTML = `
     <p>Description: ${parkObject.description}</p>
-    <p>Location: ${parkObject.addresses[0].city}, ${parkObject.states.slice(0,2)}</p>`
-        }
+    <p>Location: ${parkObject.addresses[0].city}, ${parkObject.states.slice(0, 2)}</p>`
+}
