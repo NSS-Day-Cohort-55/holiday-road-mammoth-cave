@@ -18,21 +18,18 @@ export const AttractionHtml = () => {
       (attractionApi) => {
      renderAttraction.innerHTML  = `<select id="selectedAttraction" >
         <option selected disabled hidden >Select an Attraction</option>
-        ${attractionApi.map(
-          (attraction) => 
-          `<option value=${attraction.id}>${attraction.name}</option>`)   }
+        ${attractionApi.map((attraction) => `<option value=${attraction.id}>${attraction.name}</option>`)  }
         </select>
         `
     })
 }
-
-export const AttractionDetail = (attractionValue) => {
-  const renderDetails = document.querySelector(".Planner_Details_Bazar");
-  fetchAttraction()
-  .then((bArray) => {
-    bArray.find((bObj) => {
-      if (bObj.id === parseInt(attractionValue)) {
-        renderDetails.innerHTML = ` 
+export const AttractionDetail = (attractionValue ) => {
+    const renderDetails = document.querySelector(".Planner_Details_Bazar")
+   fetchAttraction()
+   .then ( (bArray) => {
+        bArray.find( (bObj) =>  {
+           if (bObj.id === parseInt(attractionValue)) {
+               renderDetails.innerHTML =` 
                <div>
                Description: ${bObj.description}  
                </div>
@@ -42,13 +39,11 @@ export const AttractionDetail = (attractionValue) => {
                <div>
                Restrooms: ${bObj.ameneties.restrooms}
                </div>
-                `;
-      }
-    });
-  });
-};
-
-const mainContainer = document.querySelector(".Holiday-Road");
+                `
+           }
+        }) 
+    })
+}
 
 mainContainer.addEventListener("change", (changeEvent) => {
   if (changeEvent.target.id === "selectedAttraction") {
@@ -60,11 +55,4 @@ mainContainer.addEventListener("change", (changeEvent) => {
 });
 
 
-
-const changeTemperature = () => {
-  for (tempObj of allTempatures) {
-    (tempObj * 9/5) + 32
-    return dataObj.main.temp
-  }
-}
 
