@@ -1,5 +1,5 @@
 import { AttractionHtml } from "./attractions/AttractionDataManager.js";
-import { ShowHome, ClearHome, ShowError  } from "./pages/home.js";
+import { ShowHome, ClearHome, ShowError } from "./pages/home.js";
 import { ShowPlanner, ClearPlanner } from "./pages/planner.js";
 import { ShowItenerary, ClearItenerary } from "./pages/Itenerary.js";
 import { showWeather } from "./weather/WeatherDataManager.js";
@@ -135,7 +135,7 @@ applicationElement.addEventListener("click", event => {
   event.preventDefault()
   if (event.target.id === "Save_Plan") {
     //collect the input values into an object to post to the DB
-    const park = document.querySelector("select[name='park_Selector']").value
+    const park = document.querySelector(".Planner_Selectors_Park").value
     const attraction = document.querySelector("#selectedAttraction").value
     const eatery = document.querySelector(".eaterySelectBox").value.split("--")
     //we have not created a user yet - for now, we will hard code `1`.
