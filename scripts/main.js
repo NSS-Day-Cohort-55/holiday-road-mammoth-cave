@@ -15,7 +15,6 @@ import {eateryDetail} from "./eateries/Eatery.js"
 const applicationElement = document.querySelector(".Holiday-Road");
 
 ShowHome();
-showWeather(36.16784, -86.77816);
 showStates();
 
 applicationElement.addEventListener("click", (event)=> {
