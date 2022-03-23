@@ -11,6 +11,8 @@ export const getWeather = (lat, lon) => {
     .then(response => response.json())
 }
 
+
+
 export const showWeather = (lat, lon) => {
   const renderWeather = document.querySelector(".Weather_Page")
   getWeather(lat, lon)
