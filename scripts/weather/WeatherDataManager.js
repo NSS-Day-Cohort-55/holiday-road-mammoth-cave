@@ -24,7 +24,7 @@ export const showWeather = (lat, lon) => {
       renderWeather.innerHTML = `<section class= "Weather">
       <section class= "Weather_Card">
         <h2>Day 1<h2>
-        <h3>Temperature:${tempConverter(weatherApi.list[0].main.temp)}</h3>
+        <h3>Temperature: ${tempConverter(weatherApi.list[0].main.temp)}</h3>
       </section>
       <section class= "Weather_Card">
         <h2>Day 2<h2>

@@ -20,9 +20,9 @@ export const eateryHtml = () => {
     loadEatery()
     .then( (eateryApi) => {
         
-     renderEatery.innerHTML  = `<select class="eaterySelectBox">
+     renderEatery.innerHTML  = `<select class="eaterySelectBox" name="eatery_Select">
         <option selected disabled hidden >Select an Eatery</option>
-        ${eateryApi.map((eatery) => `<option value=${eatery.id}>${eatery.businessName}</option>`)   }
+        ${eateryApi.map((eatery) => `<option value="${eatery.id}--${eatery.businessName}">${eatery.businessName}</option>`)   }
         </select>
         `
     })

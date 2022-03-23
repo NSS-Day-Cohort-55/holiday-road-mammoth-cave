@@ -47,9 +47,10 @@
 
 .HomePage h1 {
   font-size: 50px;
-  width: 7em;
+  width: 12em;
   color: white;
   margin-bottom: 2em;
+  text-align: center;
 }
 
 .HomePage h2 {
