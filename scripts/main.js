@@ -48,22 +48,6 @@ applicationElement.addEventListener("click", event => {
 
 
 applicationElement.addEventListener("click", event => {
-<<<<<<< HEAD
-  const selectedState = document.querySelector(".stateSelector").value;
-  if (event.target.id === "Plan_Trip") {
-    ClearHome();
-    ShowPlanner(selectedState);
-    showParks(selectedState);
-    eateryHtml();
-    AttractionHtml();
-    showWeather(36.16784, -86.77816);
-    window.scrollTo({
-      top: 250,
-      left: 0,
-      behavior: "smooth",
-    });
-  }
-=======
   
   if (event.target.id === "Plan_Trip") {
       const selectedState = document.querySelector(".stateSelector").value.split("--");
@@ -80,7 +64,6 @@ applicationElement.addEventListener("click", event => {
             behavior: "smooth",
         });
     }
->>>>>>> 106764aecd84e107bce544c9aa3642a13590aa5c
 });
 
 
