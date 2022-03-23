@@ -17,12 +17,11 @@ export const AttractionHtml = () => {
         
      renderAttraction.innerHTML  = `<select id="selectedAttraction" >
         <option selected disabled hidden >Select an Attraction</option>
-        ${attractionApi.map((attraction) => `<option value=${attraction.id}>${attraction.name}</option>`)   }
+        ${attractionApi.map((attraction) => `<option value=${attraction.id}>${attraction.name}</option>`)  }
         </select>
         `
     })
 }
-
 export const AttractionDetail = (attractionValue ) => {
     const renderDetails = document.querySelector(".Planner_Details_Bazar")
    fetchAttraction()
@@ -42,7 +41,7 @@ export const AttractionDetail = (attractionValue ) => {
                 `
            }
         }) 
-   })
+    })
 }
 
 const mainContainer = document.querySelector(".Holiday-Road")
