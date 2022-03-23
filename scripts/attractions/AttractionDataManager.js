@@ -58,10 +58,4 @@ mainContainer.addEventListener("change", (changeEvent) => {
 
 
 
-const changeTemperature = () => {
-  for (tempObj of allTempatures) {
-    (tempObj * 9/5) + 32
-    return dataObj.main.temp
-  }
-}
 
