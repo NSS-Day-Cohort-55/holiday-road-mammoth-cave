@@ -28,7 +28,8 @@ export const AttractionHtml = () => {
 
 export const AttractionDetail = (attractionValue) => {
   const renderDetails = document.querySelector(".Planner_Details_Bazar");
-  fetchAttraction().then((bArray) => {
+  fetchAttraction()
+  .then((bArray) => {
     bArray.find((bObj) => {
       if (bObj.id === parseInt(attractionValue)) {
         renderDetails.innerHTML = ` 
