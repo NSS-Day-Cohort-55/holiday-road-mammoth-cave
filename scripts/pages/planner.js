@@ -10,8 +10,10 @@ const GeneratePlanner = (park) => {
   <section class="Planner_Section">
   
   <div class="Planner_Page">
-      <img src="./images/Logo.png" alt="">
-      <h1>Let's plan your trip to ${park}!</h1>
+      <section class="Planner_Header">
+        <img src="./images/Logo.png" alt="">
+        <h1>Let's plan your trip to ${park}!</h1>
+      </section>
       <section class="Planner_Selectors">
         <div class="Planner_Selectors_Park">Parks</div>
         <div class="Planner_Selectors_Bazar"></div>
