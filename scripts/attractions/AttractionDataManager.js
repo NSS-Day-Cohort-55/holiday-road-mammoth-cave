@@ -33,7 +33,7 @@ export const AttractionDetail = (attractionValue ) => {
                renderDetails.innerHTML =` 
                <h3> ${bObj.name}<html> </h3>
                <div>
-               Description: ${bObj.description}
+               ${bObj.description}
                </div>
                <p>
                Souvenirs: ${bObj.ameneties.souvenirs === true ? 'Yes' : 'No'}
