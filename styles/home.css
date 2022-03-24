@@ -1,47 +1,44 @@
 .HomeSection {
   display: flex;
-  background-image: url(../images/Gradient-Green.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/Mountains-Background.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 30em;
+  padding-bottom: 20em;
 }
 
 .HomePage {
   display: flex;
   align-items: center;
-    flex-direction: column;
+  flex-direction: column;
   margin: auto;
-  margin-top: 20em;
-  border: black 1px solid;
-  background-color: rgb(39, 21, 21);
+  margin-top: 10em;
+  /* border: black 2px solid;
+  background-color: #435861; */
   padding: 3em 20em 10em;
-  box-shadow: 1px 1px 88px 29px rgba(0,0,0,0.76);
--webkit-box-shadow: 1px 1px 88px 29px rgba(0,0,0,0.76);
--moz-box-shadow: 1px 1px 88px 29px rgba(0,0,0,0.76);
+  /* box-shadow: 15px 14px 4px -2px rgba(0,0,0,0.86); */
 }
 
 .HomePage button {
   padding: .5em;
-  background-color: White;
+  background-color: white;
   color: black;
   font-weight: bolder;
   border: black 2px solid;
   margin-left: .5em;
-  border-radius: 100px;
+  border-radius: 0px 200px 200px 0px;
   font-size: 20px;
-  box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
+  box-shadow: 10px 10px 4px -2px rgba(0,0,0,0.85);
 }
 
 .HomePage button:hover {
     transform: scale(0.97) ;
-    background-color: green;
     box-shadow: none;
-    box-shadow: 0px 0px 6px 4px rgba(0,0,0,0.69);
+    box-shadow: 6px 6px 4px -2px rgba(0,0,0,0.85);
   }
 
   .HomePage button:active {
-    background-color: darkgreen;
+    background-color: rgb(230,105,67);
   }
 
 
@@ -51,6 +48,7 @@
   color: white;
   margin-bottom: 2em;
   text-align: center;
+  text-shadow: 2px 2px 4px black
 }
 
 .HomePage h2 {
@@ -63,18 +61,25 @@
 .HomePage select {
   padding: .5em;
   width: 25em;
-  background-color: White;
+  background-color: white;
   color: black;
   font-weight: bolder;
   border: black 2px solid;
   margin-left: .5em;
-  border-radius: 100px;
+  border-radius: 200px 0px 0px 200px;
   font-size: 20px;
-  box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.69);
+  box-shadow: 10px 10px 4px -2px rgba(0,0,0,0.85);
+}
+
+select:hover {
+  transform: scale(0.97) ;
+    box-shadow: none;
+    box-shadow: 6px 6px 4px -2px rgba(0,0,0,0.85);
 }
 
 img {
   width: 10em;
   border: black 2px solid;
   border-radius: 100px;
+  box-shadow: 5px 5px 4px -2px rgba(0,0,0,0.85);
 }
