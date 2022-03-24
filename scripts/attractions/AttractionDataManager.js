@@ -25,20 +25,22 @@ export const AttractionHtml = () => {
 }
 export const AttractionDetail = (attractionValue ) => {
     const renderDetails = document.querySelector(".Planner_Details_Bazar")
+
    fetchAttraction()
    .then ( (bArray) => {
-        bArray.find( (bObj) =>  {
+        bArray.find( (bObj) =>  {          
            if (bObj.id === parseInt(attractionValue)) {
                renderDetails.innerHTML =` 
+               <h3>${bObj.name}</h3>
                <div>
                Description: ${bObj.description}  
                </div>
-               <div>
-               Souvenirs: ${bObj.ameneties.souvenirs} 
-               </div>
-               <div>
-               Restrooms: ${bObj.ameneties.restrooms}
-               </div>
+               <p>
+               Souvenirs: ${bObj.ameneties.souvenirs === true ? 'Yes' : 'No'}
+               </p>
+               <p>
+               Restrooms: ${bObj.ameneties.restrooms === true ? 'Yes' : 'No'}
+               </p>
                 `;
       }
     });
