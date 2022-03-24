@@ -82,6 +82,6 @@ mainContainer.addEventListener("change", changeEvent => {
             const parkDetailHtml = document.querySelector(".Planner_Details_Park")
             parkDetailHtml.innerHTML = `
             <h3> ${parkObject.fullName} </h3>
-            <p>Description: ${parkObject.description}</p>
-            <p>Location: ${parkObject.addresses[0].city}, ${parkObject.states.slice(0,2)}</p>`
+            <p>${parkObject.description}</p>
+            <p>${parkObject.addresses[0].city}, ${parkObject.states.slice(0,2)}</p>`
         }
