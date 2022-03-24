@@ -11,7 +11,7 @@
   <section class ="HomeSection">
     <div class="HomePage">
       <img src="./images/Logo.png" alt="">
-      <h1>Welcome to the Mammoth Cave dumpster fire. Let's plan a trip.</h1>
+      <h1>Welcome to Mammoth Cave's DUMPSTER FIRE! Let's plan a trip.</h1>
       <section id="HomePage_Input">
       </section>
       <section id="Error"></section>
