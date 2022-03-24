@@ -1,4 +1,5 @@
 import { settings } from '../Settings.js'
+import { showWeather } from '../weather/WeatherDataManager.js'
 
 
 
@@ -77,8 +78,10 @@ mainContainer.addEventListener("change", changeEvent => {
 
         export const parkDetail = (parkObject) => {
             console.log(parkObject)
+            showWeather(parkObject.latitude, parkObject.longitude)
             const parkDetailHtml = document.querySelector(".Planner_Details_Park")
-    parkDetailHtml.innerHTML = `
-    <p>Description: ${parkObject.description}</p>
-    <p>Location: ${parkObject.addresses[0].city}, ${parkObject.states.slice(0,2)}</p>`
+            parkDetailHtml.innerHTML = `
+            <p> ${parkObject.fullName} </p>
+            <p>Description: ${parkObject.description}</p>
+            <p>Location: ${parkObject.addresses[0].city}, ${parkObject.states.slice(0,2)}</p>`
         }
