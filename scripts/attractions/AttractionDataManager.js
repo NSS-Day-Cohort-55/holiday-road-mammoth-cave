@@ -18,7 +18,7 @@ export const AttractionHtml = () => {
       (attractionApi) => {
      renderAttraction.innerHTML  = `<select id="selectedAttraction" >
         <option selected disabled hidden >Select an Attraction</option>
-        ${attractionApi.map((attraction) => `<option value=${attraction.id}>${attraction.name}</option>`)  }
+        ${attractionApi.map((attraction) => `<option value="${attraction.id}--${attraction.name}">${attraction.name}</option>`)  }
         </select>
         `
     })

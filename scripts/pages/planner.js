@@ -5,13 +5,13 @@ import { showWeather } from "../weather/WeatherDataManager.js"
 
 
 const GeneratePlanner = (park) => {
-  
+  console.log(park)
   return `
   <section class="Planner_Section">
   
   <div class="Planner_Page">
       <img src="./images/Logo.png" alt="">
-      <h1>Let's plan your trip to ${park[1]}!</h1>
+      <h1>Let's plan your trip to ${park}!</h1>
       <section class="Planner_Selectors">
         <div class="Planner_Selectors_Park">Parks</div>
         <div class="Planner_Selectors_Bazar"></div>
@@ -25,7 +25,7 @@ const GeneratePlanner = (park) => {
       <section class="Weather_Page"></section>
       <section class="Planner_Buttons">
         <button id="Planner_State">State Selection</button>
-        <button>Save Itenerary</button>
+        <button id="Save_Plan">Save Itenerary</button>
         <button id="Planner_Iteneraries">Itenerary List</button>
       </section>
     </div>
