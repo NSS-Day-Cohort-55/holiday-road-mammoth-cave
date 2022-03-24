@@ -35,8 +35,8 @@ export const showParks = (stateCode) => {
                 `<option value = "${dataObj.id}--${dataObj.fullName}"> ${dataObj.fullName}</option>`)}
 
                 </select> `
-            })
-        }
+        })
+}
 
 
 export const showStates = () => {
