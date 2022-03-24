@@ -31,9 +31,9 @@ export const AttractionDetail = (attractionValue ) => {
         bArray.find( (bObj) =>  {          
            if (bObj.id === parseInt(attractionValue)) {
                renderDetails.innerHTML =` 
-               <p> ${bObj.name} </p>
+               <h3> ${bObj.name}<html> </h3>
                <div>
-               Description: ${bObj.description}
+               ${bObj.description}
                </div>
                <p>
                Souvenirs: ${bObj.ameneties.souvenirs === true ? 'Yes' : 'No'}
