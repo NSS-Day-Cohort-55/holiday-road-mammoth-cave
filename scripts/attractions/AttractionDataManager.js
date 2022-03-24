@@ -37,8 +37,8 @@ export const AttractionDetail = (attractionValue ) => {
                </div>
                <div>
                Restrooms: ${bObj.ameneties.restrooms}
-               </div>
-                `
+               </div> 
+               `
            }
         }) 
     })

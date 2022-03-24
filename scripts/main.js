@@ -57,7 +57,7 @@ applicationElement.addEventListener("click", event => {
         AttractionHtml();
         showWeather(36.16784, -86.77816);
         window.scrollTo({
-            top: 250,
+            top: 100,
             left: 0,
             behavior: "smooth",
         });
@@ -70,7 +70,7 @@ applicationElement.addEventListener("click", (event) => {
     ClearPlanner();
     ShowItenerary();
     window.scrollTo({
-      top: 250,
+      top: 100,
       left: 0,
       behavior: "smooth",
     });
@@ -83,7 +83,7 @@ applicationElement.addEventListener("click", (event) => {
     ShowHome();
     showStates();
     window.scrollTo({
-      top: 250,
+      top: 100,
       left: 0,
       behavior: "smooth",
     });
@@ -96,7 +96,7 @@ applicationElement.addEventListener("click", (event) => {
     ShowHome();
     showStates();
     window.scrollTo({
-      top: 250,
+      top: 100,
       left: 0,
       behavior: "smooth",
     });
