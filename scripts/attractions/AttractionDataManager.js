@@ -29,16 +29,17 @@ export const AttractionDetail = (attractionValue ) => {
         bArray.find( (bObj) =>  {
            if (bObj.id === parseInt(attractionValue)) {
                renderDetails.innerHTML =` 
+               <p> ${bObj.name} </p>
                <div>
-               Description: ${bObj.description}  
+               Description: ${bObj.description}
                </div>
-               <div>
-               Souvenirs: ${bObj.ameneties.souvenirs} 
-               </div>
-               <div>
+               <p>
+               Souvenirs: ${bObj.ameneties.souvenirs}
+               </p>
+               <p>
                Restrooms: ${bObj.ameneties.restrooms}
-               </div> 
-               `
+               </p>
+                `
            }
         }) 
     })
