@@ -17,6 +17,11 @@ const tempConverter = (kelvin) => {
 }
 
 
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
 
 export const showWeather = (lat, lon) => {
   const renderWeather = document.querySelector(".Weather_Page")
@@ -26,27 +31,27 @@ export const showWeather = (lat, lon) => {
       <section class= "Weather_Card">
         <h2>Day 1<h2>
         <h3>Temperature: ${tempConverter(weatherApi.list[0].main.temp)}</h3>
-        <h4>${weatherApi.list[0].weather[0].description}</h4>
+        <h4>${toTitleCase(weatherApi.list[0].weather[0].description)}</h4>
       </section>
       <section class= "Weather_Card">
         <h2>Day 2<h2>
         <h3>Temperature: ${tempConverter(weatherApi.list[1].main.temp)}</h3>
-        <h4>${weatherApi.list[1].weather[0].description}</h4>
+        <h4>${toTitleCase(weatherApi.list[1].weather[0].description)}</h4>
       </section>
       <section class= "Weather_Card">
         <h2>Day 3<h2>
         <h3>Temperature: ${tempConverter(weatherApi.list[2].main.temp)}</h3>
-        <h4>${weatherApi.list[2].weather[0].description}</h4>
+        <h4>${toTitleCase(weatherApi.list[2].weather[0].description)}</h4>
       </section>
       <section class= "Weather_Card">
         <h2>Day 4<h2>
         <h3>Temperature: ${tempConverter(weatherApi.list[3].main.temp)}</h3>
-        <h4>${weatherApi.list[3].weather[0].description}</h4>
+        <h4>${toTitleCase(weatherApi.list[3].weather[0].description)}</h4>
       </section>
       <section class= "Weather_Card">
         <h2>Day 5<h2>
         <h3>Temperature: ${tempConverter(weatherApi.list[4].main.temp)}</h3>
-        <h4>${weatherApi.list[4].weather[0].description}</h4>
+        <h4>${toTitleCase(weatherApi.list[4].weather[0].description)}</h4>
       </section>
       </section>`
      })
