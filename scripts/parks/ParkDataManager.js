@@ -81,7 +81,7 @@ mainContainer.addEventListener("change", changeEvent => {
             showWeather(parkObject.latitude, parkObject.longitude)
             const parkDetailHtml = document.querySelector(".Planner_Details_Park")
             parkDetailHtml.innerHTML = `
-            <p> ${parkObject.fullName} </p>
+            <h3> ${parkObject.fullName} </h3>
             <p>Description: ${parkObject.description}</p>
             <p>Location: ${parkObject.addresses[0].city}, ${parkObject.states.slice(0,2)}</p>`
         }
